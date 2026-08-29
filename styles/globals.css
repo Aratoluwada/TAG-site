@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #080808;
+  --color-background-secondary: #0e0e10;
+  --color-surface: #151318;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a1a1aa;
+  --color-brand: #7c3aed;
+  --color-brand-bright: #9333ea;
+  --color-border: rgb(255 255 255 / 10%);
+  --spacing-section: clamp(5rem, 10vw, 10rem);
+  --spacing-section-sm: clamp(3.5rem, 7vw, 6rem);
+  --font-sans: "Geist Variable", Arial, sans-serif;
+  --font-display: "Space Grotesk Variable", Arial, sans-serif;
+}
+
+@layer base {
+  * { @apply border-border; }
+
+  html { @apply bg-background; }
+
+  body { @apply min-h-screen bg-background font-sans text-text-primary antialiased; }
+
+  ::selection { @apply bg-brand text-text-primary; }
+
+  :focus-visible { @apply outline-2 outline-offset-4 outline-brand; }
+
+  a, button { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer components {
+  .page-shell { @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12; }
+
+  .eyebrow { @apply text-xs font-medium uppercase tracking-[0.16em] text-text-secondary; }
+
+  .section { padding-block: var(--spacing-section); }
+
+  .section-sm { padding-block: var(--spacing-section-sm); }
+
+  .button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 border px-5 text-sm font-medium tracking-[-0.01em] transition-[background-color,border-color,color,transform] duration-200 ease-out;
+  }
+
+  .button:hover { @apply -translate-y-px; }
+
+  .button-primary { @apply border-text-primary bg-text-primary text-background hover:border-brand hover:bg-brand hover:text-text-primary; }
+
+  .button-secondary { @apply border-border bg-transparent text-text-primary hover:border-brand hover:text-brand; }
+
+  .button-sm { @apply min-h-10 px-4 text-xs; }
+
+  .link { @apply transition-colors duration-200 hover:text-text-primary; }
+
+  .card { @apply border border-border bg-surface; }
+}
