@@ -19,7 +19,7 @@ export function BrandLogo({ className, size = "header" }: BrandLogoProps) {
         className="block"
         height={dimensions}
         priority={size === "header"}
-        src="/images/tag-logo.png"
+        src="/images/tag-logo-transparent.png"
         width={dimensions}
       />
     </Link>

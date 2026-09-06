@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { BrandLogo } from "@/components/brand-logo";
 import { navigation } from "@/data/navigation";
@@ -11,9 +12,26 @@ import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    const onScroll = () => setHasScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="relative border-b border-border bg-background">
+    <motion.header
+      animate={{ opacity: 1, y: 0 }}
+      className={cn(
+        "sticky top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ease-out",
+        hasScrolled ? "border-b border-border bg-background/90 backdrop-blur-[6px]" : "border-b border-transparent bg-transparent",
+      )}
+      initial={reduceMotion ? false : { opacity: 0, y: -12 }}
+      transition={{ duration: reduceMotion ? 0 : 0.5, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div className="page-shell flex h-20 items-center justify-between">
         <BrandLogo />
         <nav aria-label="Primary navigation" className="hidden items-center gap-7 text-sm text-text-secondary md:flex">
@@ -24,7 +42,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <Link className={cn(buttonVariants({ variant: "primary", size: "sm" }), "hidden md:inline-flex")} href="/contact">
-          Start a project <span aria-hidden="true">↗</span>
+          Let&apos;s build <span aria-hidden="true">↗</span>
         </Link>
         <button
           aria-controls="mobile-navigation"
@@ -52,10 +70,10 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link className={cn(buttonVariants({ variant: "primary" }), "mt-6 w-full")} href="/contact" onClick={() => setIsOpen(false)}>
-            Start a project <span aria-hidden="true">↗</span>
+            Let&apos;s build <span aria-hidden="true">↗</span>
           </Link>
         </div>
       </nav>
-    </header>
+    </motion.header>
   );
 }
