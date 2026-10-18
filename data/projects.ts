@@ -1,5 +1,11 @@
 export type ProjectVisual = "dashboard" | "editorial" | "commerce" | "system";
 
+/** A real screenshot, stored in /public. Use a 16:10 desktop capture (e.g. 1440x900). */
+export type ProjectImage = {
+  src: string;
+  alt: string;
+};
+
 /** Portfolio filter categories. A project can belong to more than one. */
 export const projectFilters = ["Websites", "Web Applications", "Education", "Business", "Organizations"] as const;
 
@@ -19,7 +25,10 @@ export type Project = {
   description: string;
   /** Where the project card links to. Defaults to the case study page. */
   href: string;
-  visual: ProjectVisual;
+  /** Screenshot shown on cards and the case study page. */
+  image?: ProjectImage;
+  /** Generated placeholder artwork, only used while a project has no `image`. */
+  visual?: ProjectVisual;
   filters: ProjectFilter[];
   technologies?: string[];
   /** What TAG delivered, shown on the case study page. */
@@ -33,53 +42,56 @@ export type Project = {
 };
 
 /**
- * Temporary project content. Replace entries here when case studies are ready.
+ * To add a project:
+ *   1. Save a 1440x900 screenshot to /public/images/work/<slug>.png and point `image` at it.
+ *   2. Set `liveUrl` to the live site and pick one or more `filters`.
+ *   3. Optionally list `services` and `technologies` (only what's true).
+ *   4. When ready, add `caseStudy.sections` — each renders as an editorial block on /work/[slug].
  *
- * To publish a real project:
- *   1. Set `liveUrl` to the live site.
- *   2. List `services` TAG delivered.
- *   3. Add `caseStudy.sections` — each one renders as an editorial block on /work/[slug].
+ * The filter bar on /work only shows categories that have at least one project.
  */
 export const projects: Project[] = [
   {
-    slug: "academiq-cloud",
-    name: "Academiq Cloud",
-    category: "Education / SaaS",
-    description: "A cloud-based school management platform built for modern education.",
-    href: "/work/academiq-cloud",
-    visual: "dashboard",
-    filters: ["Web Applications", "Education"],
-    technologies: ["Next.js", "TypeScript", "Supabase"],
+    slug: "royalty-hall-schools",
+    name: "Royalty Hall Schools",
+    category: "Education / School website",
+    description:
+      "A website for a Christian school, presenting its academics, facilities and leadership, with online admissions registration.",
+    href: "/work/royalty-hall-schools",
+    image: {
+      src: "/images/work/royalty-hall-schools.png",
+      alt: "Royalty Hall Schools website homepage",
+    },
+    filters: ["Websites", "Education"],
+    liveUrl: "https://royaltyhallschools.vercel.app",
   },
   {
-    slug: "northline-journal",
-    name: "Northline Journal",
-    category: "Culture / Editorial",
-    description: "A refined publishing platform for ideas, stories, and a growing creative community.",
-    href: "/work/northline-journal",
-    visual: "editorial",
-    filters: ["Websites", "Organizations"],
-    technologies: ["Next.js", "CMS", "Motion"],
+    slug: "siwes-defense",
+    name: "SIWES Defense",
+    category: "Engineering / Report site",
+    description:
+      "A presentation site for a 12-week SIWES technical report, with a featured IoT project, a training gallery and downloadable report and slides.",
+    href: "/work/siwes-defense",
+    image: {
+      src: "/images/work/siwes-defense.png",
+      alt: "SIWES Defense website homepage",
+    },
+    filters: ["Websites", "Education"],
+    liveUrl: "https://aratoluwada-siwes.vercel.app",
   },
   {
-    slug: "form-and-field",
-    name: "Form & Field",
-    category: "Commerce / Brand",
-    description: "A considered digital storefront that makes a distinctive independent brand feel tactile online.",
-    href: "/work/form-and-field",
-    visual: "commerce",
-    filters: ["Websites", "Business"],
-    technologies: ["Next.js", "Shopify", "Stripe"],
-  },
-  {
-    slug: "civic-assembly",
-    name: "Civic Assembly",
-    category: "Community / Platform",
-    description: "A member platform designed to turn shared purpose into visible participation.",
-    href: "/work/civic-assembly",
-    visual: "system",
-    filters: ["Web Applications", "Organizations"],
-    technologies: ["React", "TypeScript", "Postgres"],
+    slug: "aratoluwada-cv",
+    name: "Aratoluwada",
+    category: "Portfolio / Personal site",
+    description:
+      "A personal portfolio for a front-end developer and mechatronics engineering student who builds software, hardware and IoT systems.",
+    href: "/work/aratoluwada-cv",
+    image: {
+      src: "/images/work/aratoluwada-cv.png",
+      alt: "Aratoluwada personal portfolio homepage",
+    },
+    filters: ["Websites"],
+    liveUrl: "https://aratoluwada.cv",
   },
 ];
 

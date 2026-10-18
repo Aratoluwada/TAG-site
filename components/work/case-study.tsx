@@ -71,7 +71,7 @@ export function CaseStudy({ project, next }: { project: Project; next?: Project 
       <section aria-label={`${project.name} preview`} className="border-t border-border bg-background-secondary">
         <div className="page-shell py-12 sm:py-16 lg:py-20">
           <motion.div className="project-preview-link" {...reveal(0.4)}>
-            <ProjectPreview name={project.name} visual={project.visual} />
+            <ProjectPreview image={project.image} name={project.name} visual={project.visual} />
           </motion.div>
 
           <dl className="mt-10 grid gap-8 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
@@ -160,7 +160,7 @@ export function CaseStudy({ project, next }: { project: Project; next?: Project 
               </div>
 
               <Link aria-label={`View ${next.name} case study`} className="project-preview-link group" href={next.href}>
-                <ProjectPreview name={next.name} visual={next.visual} />
+                <ProjectPreview image={next.image} name={next.name} visual={next.visual} />
                 <span className="project-preview-overlay" />
                 <span aria-hidden="true" className="project-preview-arrow">
                   <ArrowUpRight size={21} strokeWidth={1.5} />

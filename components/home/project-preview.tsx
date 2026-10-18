@@ -1,8 +1,32 @@
-import type { ProjectVisual } from "@/data/projects";
+import Image from "next/image";
 
-export function ProjectPreview({ name, visual }: { name: string; visual: ProjectVisual }) {
+import type { ProjectImage, ProjectVisual } from "@/data/projects";
+
+type ProjectPreviewProps = {
+  name: string;
+  /** A real screenshot. Takes priority over `visual`. */
+  image?: ProjectImage;
+  /** Generated placeholder artwork, used when a project has no screenshot yet. */
+  visual?: ProjectVisual;
+};
+
+export function ProjectPreview({ name, image, visual }: ProjectPreviewProps) {
+  if (image) {
+    return (
+      <div className="project-preview bg-[#0b0b0e]">
+        <Image
+          alt={image.alt}
+          className="object-cover object-top"
+          fill
+          sizes="(min-width: 1024px) 66vw, 100vw"
+          src={image.src}
+        />
+      </div>
+    );
+  }
+
   return (
-    <div aria-hidden="true" className={`project-preview project-preview-${visual}`}>
+    <div aria-hidden="true" className={`project-preview ${visual ? `project-preview-${visual}` : "bg-surface"}`}>
       {visual === "dashboard" && <DashboardPreview />}
       {visual === "editorial" && <EditorialPreview />}
       {visual === "commerce" && <CommercePreview />}
