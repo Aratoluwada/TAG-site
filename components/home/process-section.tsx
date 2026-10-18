@@ -48,7 +48,7 @@ export function ProcessSection() {
           </div>
 
           <p className="max-w-md text-sm leading-7 text-white/45 lg:ml-auto lg:pt-10">
-            Great digital work isn't accidental. Our process keeps strategy,
+            Great digital work isn&apos;t accidental. Our process keeps strategy,
             creativity, and technology moving in the same direction.
           </p>
         </div>

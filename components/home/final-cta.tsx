@@ -30,8 +30,8 @@ export function FinalCta() {
 
           <div className="mt-12 flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-md text-base leading-7 text-white/45">
-              Tell us what you're working on. Whether it's an idea, a business,
-              or something entirely new, let's turn it into something people
+              Tell us what you&apos;re working on. Whether it&apos;s an idea, a business,
+              or something entirely new, let&apos;s turn it into something people
               remember.
             </p>
 
