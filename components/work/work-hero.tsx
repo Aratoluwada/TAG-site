@@ -22,7 +22,7 @@ export function WorkHero({ projectCount }: { projectCount: number }) {
         <motion.p className="eyebrow mb-8" {...reveal(0.08)}>Selected work</motion.p>
 
         <h1
-          className="font-display text-[clamp(3.2rem,13vw,11.5rem)] font-medium uppercase leading-[0.8] tracking-[-0.085em] text-text-primary"
+          className="font-display text-[clamp(3.4rem,18vw,6rem)] sm:text-[clamp(3.2rem,13vw,11.5rem)] font-bold uppercase leading-[0.8] tracking-[-0.03em] text-text-primary"
           id="work-title"
         >
           <motion.span className="block" {...reveal(0.16)}>WORK THAT</motion.span>
@@ -39,7 +39,7 @@ export function WorkHero({ projectCount }: { projectCount: number }) {
           </p>
 
           <div className="flex items-center gap-4 text-text-secondary">
-            <span className="font-display text-4xl font-medium tracking-[-0.06em] text-text-primary">
+            <span className="font-display text-4xl font-bold tracking-[-0.025em] text-text-primary">
               {String(projectCount).padStart(2, "0")}
             </span>
             <span className="h-px w-8 bg-border" />

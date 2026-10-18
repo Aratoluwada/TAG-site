@@ -23,7 +23,7 @@ export function Hero() {
 
       <div className="page-shell flex w-full flex-col justify-end pb-14 pt-28 sm:pb-18 lg:pb-22 lg:pt-36">
         <motion.p className="eyebrow mb-8" {...reveal(0.08)}>Digital development studio</motion.p>
-        <h1 className="font-display text-[clamp(2.2rem,11vw,10rem)] font-medium leading-[0.8] tracking-[-0.085em] text-text-primary">
+        <h1 className="font-display text-[clamp(3rem,18vw,5.5rem)] sm:text-[clamp(3.5rem,11vw,10rem)] font-bold leading-[0.8] tracking-[-0.03em] text-text-primary">
           <motion.span className="block" {...reveal(0.16)}>WE BUILD WHAT</motion.span>
           <motion.span className="block" {...reveal(0.24)}>SHOULD EXIST.</motion.span>
         </h1>

@@ -30,7 +30,7 @@ export function WorkCollection() {
   );
 
   return (
-    <section aria-label="Project collection" className="border-t border-border bg-background-secondary">
+    <section aria-label="Project collection" className="panel overflow-clip">
       <div className="sticky top-20 z-40 border-b border-border bg-background/90 backdrop-blur-[6px]">
         <div className="page-shell">
           <div
@@ -45,7 +45,7 @@ export function WorkCollection() {
                 <button
                   aria-pressed={isActive}
                   className={cn(
-                    "relative inline-flex min-h-14 shrink-0 items-center gap-2 px-3 font-display text-sm font-medium uppercase tracking-[-0.01em] transition-colors duration-200 sm:px-5",
+                    "relative inline-flex min-h-14 shrink-0 items-center gap-2 px-3 font-display text-sm font-semibold uppercase tracking-[-0.01em] transition-colors duration-200 sm:px-5",
                     isActive ? "text-text-primary" : "text-text-secondary hover:text-text-primary",
                   )}
                   key={option.label}

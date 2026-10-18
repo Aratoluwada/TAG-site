@@ -40,7 +40,7 @@ export function ProcessSection() {
               How we work
             </p>
 
-            <h2 className="max-w-3xl text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+            <h2 className="max-w-3xl text-5xl font-bold tracking-[-0.015em] text-white sm:text-6xl lg:text-7xl">
               FROM IDEA
               <br />
               <span className="text-white/35">TO IMPACT.</span>
@@ -71,7 +71,7 @@ export function ProcessSection() {
                 <ArrowUpRight className="h-4 w-4 text-white/20 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-purple-400" />
               </div>
 
-              <h3 className="mb-5 text-2xl font-semibold tracking-[-0.03em] text-white">
+              <h3 className="mb-5 text-2xl font-bold tracking-[-0.015em] text-white">
                 {step.title}
               </h3>
 

@@ -55,7 +55,7 @@ export function CaseStudy({ project, next }: { project: Project; next?: Project 
           <motion.p className="eyebrow mt-12 sm:mt-16" {...reveal(0.1)}>{project.category}</motion.p>
 
           <motion.h1
-            className="mt-6 font-display text-[clamp(3rem,11vw,10rem)] font-medium uppercase leading-[0.8] tracking-[-0.085em] text-text-primary"
+            className="mt-6 font-display text-[clamp(2.2rem,11.5vw,5rem)] sm:text-[clamp(3rem,11vw,10rem)] font-bold uppercase leading-[0.8] tracking-[-0.03em] text-text-primary"
             id="case-study-title"
             {...reveal(0.18)}
           >
@@ -68,7 +68,7 @@ export function CaseStudy({ project, next }: { project: Project; next?: Project 
         </div>
       </section>
 
-      <section aria-label={`${project.name} preview`} className="border-t border-border bg-background-secondary">
+      <section aria-label={`${project.name} preview`} className="panel">
         <div className="page-shell py-12 sm:py-16 lg:py-20">
           <motion.div className="project-preview-link" {...reveal(0.4)}>
             <ProjectPreview image={project.image} name={project.name} visual={project.visual} />
@@ -112,7 +112,7 @@ export function CaseStudy({ project, next }: { project: Project; next?: Project 
                   </div>
 
                   <div className="lg:col-span-8 lg:col-start-5">
-                    <h2 className="font-display text-[clamp(2rem,4.6vw,4.25rem)] font-medium leading-[0.92] tracking-[-0.06em] text-text-primary">
+                    <h2 className="font-display text-[clamp(2rem,4.6vw,4.25rem)] font-bold leading-[0.92] tracking-[-0.025em] text-text-primary">
                       {section.heading}
                     </h2>
                     <p className="mt-8 max-w-2xl text-base leading-7 text-text-secondary sm:text-lg sm:leading-8">{section.body}</p>
@@ -124,7 +124,7 @@ export function CaseStudy({ project, next }: { project: Project; next?: Project 
             <motion.div className="card grid gap-8 p-8 sm:p-12 lg:grid-cols-12 lg:gap-12 lg:p-16" {...scrollReveal}>
               <div className="lg:col-span-7">
                 <p className="eyebrow">Case study</p>
-                <h2 className="mt-6 font-display text-[clamp(2rem,4.6vw,4.25rem)] font-medium leading-[0.92] tracking-[-0.06em] text-text-primary">
+                <h2 className="mt-6 font-display text-[clamp(2rem,4.6vw,4.25rem)] font-bold leading-[0.92] tracking-[-0.025em] text-text-primary">
                   The full story is on its way.
                 </h2>
                 <p className="mt-8 max-w-xl text-base leading-7 text-text-secondary sm:text-lg sm:leading-8">
@@ -144,12 +144,12 @@ export function CaseStudy({ project, next }: { project: Project; next?: Project 
       </section>
 
       {next && (
-        <section aria-label="Next project" className="border-t border-border bg-background-secondary">
+        <section aria-label="Next project" className="panel">
           <div className="page-shell py-16 sm:py-24 lg:py-32">
             <motion.div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-center lg:gap-20" {...scrollReveal}>
               <div>
                 <p className="eyebrow">Next project</p>
-                <h2 className="mt-6 font-display text-[clamp(2.6rem,6vw,5.5rem)] font-medium uppercase leading-[0.84] tracking-[-0.075em] text-text-primary">
+                <h2 className="mt-6 font-display text-[clamp(2.4rem,11vw,3.4rem)] lg:text-[clamp(2.4rem,4.2vw,4rem)] font-bold uppercase leading-[0.84] tracking-[-0.03em] text-text-primary">
                   {next.name}
                 </h2>
                 <p className="mt-6 max-w-sm text-base leading-7 text-text-secondary">{next.description}</p>

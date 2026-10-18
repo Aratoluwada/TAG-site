@@ -33,14 +33,14 @@ export function TestimonialsSection() {
             Client words
           </p>
 
-          <h2 className="max-w-3xl text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+          <h2 className="max-w-3xl text-5xl font-bold tracking-[-0.015em] text-white sm:text-6xl lg:text-7xl">
             MADE WITH
             <br />
             <span className="text-white/35">PEOPLE IN MIND.</span>
           </h2>
         </div>
 
-        <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 lg:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-card border border-white/10 bg-white/10 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.article
               key={`${testimonial.name}-${index}`}

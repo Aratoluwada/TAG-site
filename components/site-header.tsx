@@ -48,7 +48,7 @@ export function SiteHeader() {
           aria-controls="mobile-navigation"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close navigation" : "Open navigation"}
-          className="inline-flex size-10 items-center justify-center border border-border text-text-primary transition-colors hover:border-text-secondary hover:text-brand md:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-control border border-border text-text-primary transition-colors hover:border-text-secondary hover:text-brand md:hidden"
           onClick={() => setIsOpen((open) => !open)}
           type="button"
         >

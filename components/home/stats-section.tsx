@@ -9,7 +9,7 @@ export function StatsSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section aria-label="TAG by the numbers" className="border-y border-border bg-background-secondary">
+    <section aria-label="TAG by the numbers" className="panel overflow-clip">
       <div className="page-shell grid grid-cols-2 divide-x divide-y divide-border md:grid-cols-4 md:divide-y-0">
         {stats.map((stat, index) => (
           <motion.div
@@ -20,7 +20,7 @@ export function StatsSection() {
             viewport={{ once: true, amount: 0.5 }}
             whileInView={{ opacity: 1, y: 0 }}
           >
-            <p className="font-display text-4xl font-medium tracking-[-0.07em] text-text-primary sm:text-5xl">{stat.value}</p>
+            <p className="font-display text-4xl font-bold tracking-[-0.03em] text-text-primary sm:text-5xl">{stat.value}</p>
             <p className="mt-2 text-sm text-text-secondary">{stat.label}</p>
           </motion.div>
         ))}

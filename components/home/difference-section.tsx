@@ -34,7 +34,7 @@ const differences = [
 
 export function DifferenceSection() {
   return (
-    <section className="border-t border-white/10 py-24 sm:py-32 lg:py-40">
+    <section className="py-24 sm:py-32 lg:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
           <div>
@@ -42,7 +42,7 @@ export function DifferenceSection() {
               The TAG Difference
             </p>
 
-            <h2 className="max-w-xl text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+            <h2 className="max-w-xl text-5xl font-bold tracking-[-0.015em] text-white sm:text-6xl lg:text-7xl">
               NOT JUST
               <br />
               ANOTHER
@@ -87,7 +87,7 @@ export function DifferenceSection() {
                     <div className="mb-4 flex items-center gap-3">
                       <Icon className="h-4 w-4 text-purple-400 transition-transform duration-300 group-hover:scale-110" />
 
-                      <h3 className="text-sm font-semibold tracking-[0.08em] text-white">
+                      <h3 className="text-sm font-bold tracking-[0.08em] text-white">
                         {item.title}
                       </h3>
                     </div>
