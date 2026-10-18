@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "@fontsource-variable/geist";
-import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/bricolage-grotesque/opsz.css";
+import "@fontsource-variable/figtree";
 
 import "@/styles/globals.css";
 import { SiteFooter } from "@/components/site-footer";
