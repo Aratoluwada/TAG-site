@@ -23,7 +23,7 @@ export function WhoWeBuildFor() {
               Who we build for
             </p>
 
-            <h2 className="max-w-3xl text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+            <h2 className="max-w-3xl text-5xl font-bold tracking-[-0.015em] text-white sm:text-6xl lg:text-7xl">
               YOUR WORLD.
               <br />
               <span className="text-white/35">DIGITALLY BUILT.</span>
@@ -51,7 +51,7 @@ export function WhoWeBuildFor() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <h3 className="text-2xl font-medium tracking-[-0.03em] text-white transition-transform duration-300 group-hover:translate-x-2 sm:text-4xl lg:text-5xl">
+                <h3 className="text-2xl font-bold tracking-[-0.015em] text-white transition-transform duration-300 group-hover:translate-x-2 sm:text-4xl lg:text-5xl">
                   {audience}
                 </h3>
               </div>

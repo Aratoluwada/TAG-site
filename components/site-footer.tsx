@@ -6,7 +6,7 @@ import { navigation } from "@/data/navigation";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-background-secondary">
+    <footer className="panel">
       <div className="page-shell grid gap-12 py-12 sm:py-16 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
           <BrandLogo size="footer" />

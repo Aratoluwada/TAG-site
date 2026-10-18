@@ -11,8 +11,11 @@
   --color-border: rgb(255 255 255 / 10%);
   --spacing-section: clamp(5rem, 10vw, 10rem);
   --spacing-section-sm: clamp(3.5rem, 7vw, 6rem);
-  --font-sans: "Geist Variable", Arial, sans-serif;
-  --font-display: "Space Grotesk Variable", Arial, sans-serif;
+  --font-sans: "Figtree Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --radius-control: 0.75rem;
+  --radius-card: 1.25rem;
+  --radius-panel: 1.75rem;
 }
 
 @layer base {
@@ -27,6 +30,9 @@
   :focus-visible { @apply outline-2 outline-offset-4 outline-brand; }
 
   a, button { -webkit-tap-highlight-color: transparent; }
+
+  /* Every heading uses the display face, so sections never fall back to the body font. */
+  h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; }
 }
 
 @layer components {
@@ -39,7 +45,7 @@
   .section-sm { padding-block: var(--spacing-section-sm); }
 
   .button {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 border px-5 text-sm font-medium tracking-[-0.01em] transition-[background-color,border-color,color,transform] duration-200 ease-out;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-control border px-5 text-sm font-semibold tracking-[-0.01em] transition-[background-color,border-color,color,transform] duration-200 ease-out;
   }
 
   .button:hover { @apply -translate-y-px; }
@@ -52,7 +58,10 @@
 
   .link { @apply transition-colors duration-200 hover:text-text-primary; }
 
-  .card { @apply border border-border bg-surface; }
+  .card { @apply rounded-card border border-border bg-surface; }
+
+  /* A rounded, slightly inset band. Replaces the full-bleed secondary-colour sections. */
+  .panel { @apply mx-2 my-2 rounded-panel border border-border bg-background-secondary sm:mx-3 sm:my-3 lg:mx-4 lg:my-4; }
 
   .hero-grid {
     background-image:
@@ -77,7 +86,7 @@
     right: -0.06em;
     bottom: -0.29em;
     color: rgb(255 255 255 / 2.5%);
-    font-family: "Space Grotesk Variable", Arial, sans-serif;
+    font-family: var(--font-display);
     font-size: clamp(15rem, 43vw, 44rem);
     font-weight: 500;
     letter-spacing: -0.12em;
@@ -94,6 +103,7 @@
     position: relative;
     display: block;
     overflow: hidden;
+    border-radius: var(--radius-card);
     border: 1px solid var(--color-border);
     background: #0b0b0e;
     transition: border-color 300ms ease;
@@ -128,6 +138,7 @@
     width: 2.75rem;
     height: 2.75rem;
     place-items: center;
+    border-radius: 0.875rem;
     border: 1px solid rgb(255 255 255 / 18%);
     color: var(--color-text-primary);
     opacity: 0;
@@ -154,16 +165,16 @@
   .project-link svg { transition: transform 200ms ease; }
   .project-link:hover svg { transform: translate(0.15rem, -0.15rem); }
 
-  .project-dashboard { position: absolute; inset: 8% 9%; display: grid; grid-template-columns: 19% 1fr; overflow: hidden; border: 1px solid rgb(255 255 255 / 12%); background: rgb(14 14 19 / 95%); box-shadow: 0 2rem 5rem rgb(0 0 0 / 38%); }
+  .project-dashboard { position: absolute; inset: 8% 9%; display: grid; grid-template-columns: 19% 1fr; overflow: hidden; border-radius: 0.875rem; border: 1px solid rgb(255 255 255 / 12%); background: rgb(14 14 19 / 95%); box-shadow: 0 2rem 5rem rgb(0 0 0 / 38%); }
   .project-dashboard-rail { border-right: 1px solid rgb(255 255 255 / 8%); background: linear-gradient(to bottom, rgb(124 58 237 / 65%) 0 12%, transparent 12% 21%, rgb(255 255 255 / 12%) 21% 24%, transparent 24% 35%, rgb(255 255 255 / 12%) 35% 38%, transparent 38%); }
   .project-dashboard-main { padding: 9% 8%; }
   .project-dashboard-top { display: flex; justify-content: space-between; }
   .project-dashboard-top span { width: 20%; height: 0.38rem; background: rgb(255 255 255 / 16%); }
   .project-dashboard-top span:first-child { width: 38%; background: rgb(255 255 255 / 42%); }
   .project-dashboard-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7%; margin-top: 11%; }
-  .project-dashboard-metrics i { display: block; height: 3.2rem; border: 1px solid rgb(255 255 255 / 9%); background: linear-gradient(135deg, rgb(124 58 237 / 30%), transparent); }
+  .project-dashboard-metrics i { display: block; height: 3.2rem; border-radius: 0.5rem; border: 1px solid rgb(255 255 255 / 9%); background: linear-gradient(135deg, rgb(124 58 237 / 30%), transparent); }
   .project-dashboard-chart { display: flex; align-items: end; gap: 6%; height: 36%; margin-top: 10%; border-bottom: 1px solid rgb(255 255 255 / 14%); }
-  .project-dashboard-chart b { display: block; width: 10%; background: linear-gradient(to top, rgb(124 58 237 / 87%), rgb(147 51 234 / 24%)); }
+  .project-dashboard-chart b { display: block; width: 10%; border-radius: 0.25rem 0.25rem 0 0; background: linear-gradient(to top, rgb(124 58 237 / 87%), rgb(147 51 234 / 24%)); }
   .project-dashboard-chart b:nth-child(1) { height: 25%; }.project-dashboard-chart b:nth-child(2) { height: 42%; }.project-dashboard-chart b:nth-child(3) { height: 34%; }.project-dashboard-chart b:nth-child(4) { height: 59%; }.project-dashboard-chart b:nth-child(5) { height: 47%; }.project-dashboard-chart b:nth-child(6) { height: 76%; }.project-dashboard-chart b:nth-child(7) { height: 88%; }
 
   .project-preview-dashboard { background: radial-gradient(circle at 78% 22%, rgb(124 58 237 / 35%), transparent 38%), linear-gradient(140deg, #16131f, #070708 62%); }
@@ -172,7 +183,7 @@
   .project-preview-editorial { background: #d6cfbd; }
   .project-commerce { position: absolute; inset: 0; overflow: hidden; padding: 8%; background: #1b1322; color: #f5f0e7; }.project-commerce-orb { position: absolute; top: -30%; right: -6%; width: 80%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #e3b6ff, #8d36b3 32%, #2e173f 68%); filter: blur(1px); }.project-commerce p { position: relative; z-index: 1; margin: 0; font-family: Georgia, serif; font-size: clamp(2.6rem, 6.5vw, 6.5rem); line-height: 0.78; letter-spacing: -0.09em; }.project-commerce span { position: absolute; z-index: 1; right: 8%; bottom: 11%; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; }.project-commerce i { position: absolute; right: 8%; bottom: 8%; left: 8%; height: 1px; background: rgb(245 240 231 / 55%); }
   .project-preview-commerce { background: #1b1322; }
-  .project-system { position: absolute; inset: 0; padding: 7%; background: #101416; color: #dce8dc; }.project-system-grid { position: absolute; top: 0; right: 0; bottom: 0; width: 46%; display: grid; grid-template-columns: repeat(2, 1fr); border-left: 1px solid rgb(220 232 220 / 18%); }.project-system-grid span { display: grid; place-items: center; border-right: 1px solid rgb(220 232 220 / 18%); border-bottom: 1px solid rgb(220 232 220 / 18%); color: rgb(220 232 220 / 45%); font-size: clamp(0.75rem, 1.2vw, 1rem); }.project-system p { position: relative; margin: 0; font-family: "Space Grotesk Variable", Arial, sans-serif; font-size: clamp(2.4rem, 6vw, 6rem); font-weight: 500; line-height: 0.74; letter-spacing: -0.1em; }.project-preview-system { background: #101416; }
+  .project-system { position: absolute; inset: 0; padding: 7%; background: #101416; color: #dce8dc; }.project-system-grid { position: absolute; top: 0; right: 0; bottom: 0; width: 46%; display: grid; grid-template-columns: repeat(2, 1fr); border-left: 1px solid rgb(220 232 220 / 18%); }.project-system-grid span { display: grid; place-items: center; border-right: 1px solid rgb(220 232 220 / 18%); border-bottom: 1px solid rgb(220 232 220 / 18%); color: rgb(220 232 220 / 45%); font-size: clamp(0.75rem, 1.2vw, 1rem); }.project-system p { position: relative; margin: 0; font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 6rem); font-weight: 500; line-height: 0.74; letter-spacing: -0.1em; }.project-preview-system { background: #101416; }
 }
 
 @keyframes atmospheric-drift {

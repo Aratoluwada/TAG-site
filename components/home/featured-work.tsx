@@ -14,7 +14,7 @@ export function FeaturedWork() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section aria-labelledby="featured-work-title" className="section overflow-hidden border-t border-border bg-background-secondary">
+    <section aria-labelledby="featured-work-title" className="section panel overflow-hidden">
       <div className="page-shell">
         <motion.div
           className="max-w-4xl"
@@ -25,7 +25,7 @@ export function FeaturedWork() {
         >
           <p className="eyebrow">Selected work</p>
           <h2
-            className="mt-5 max-w-3xl font-display text-[clamp(3.6rem,9vw,8.5rem)] font-medium uppercase leading-[0.79] tracking-[-0.085em] text-text-primary"
+            className="mt-5 max-w-3xl font-display text-[clamp(3.6rem,9vw,8.5rem)] font-bold uppercase leading-[0.79] tracking-[-0.03em] text-text-primary"
             id="featured-work-title"
           >
             WORK THAT
@@ -69,7 +69,7 @@ export function FeaturedWork() {
                     <p className="eyebrow">{project.category}</p>
                   </div>
 
-                  <h3 className="mt-6 font-display text-[clamp(2.6rem,5vw,5rem)] font-medium uppercase leading-[0.84] tracking-[-0.075em] text-text-primary">
+                  <h3 className="mt-6 font-display text-[clamp(2.2rem,11.5vw,3.4rem)] lg:text-[clamp(2.2rem,3.7vw,3.3rem)] font-bold uppercase leading-[0.84] tracking-[-0.03em] text-text-primary">
                     {project.name}
                   </h3>
 
@@ -102,7 +102,7 @@ export function FeaturedWork() {
           viewport={{ once: true, amount: 0.5 }}
           whileInView={{ opacity: 1 }}
         >
-          <Link className="group inline-flex items-center gap-3 font-display text-base font-medium uppercase tracking-[-0.02em] text-text-primary transition-colors duration-200 hover:text-brand" href="/work">
+          <Link className="group inline-flex items-center gap-3 font-display text-base font-semibold uppercase tracking-[-0.01em] text-text-primary transition-colors duration-200 hover:text-brand" href="/work">
             View all work
             <span className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">
               <ArrowUpRight aria-hidden="true" size={19} strokeWidth={1.5} />

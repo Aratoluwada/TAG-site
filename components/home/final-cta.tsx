@@ -22,7 +22,7 @@ export function FinalCta() {
             Start something
           </p>
 
-          <h2 className="text-6xl font-semibold leading-[0.9] tracking-[-0.06em] text-white sm:text-7xl lg:text-[9rem]">
+          <h2 className="text-[clamp(2.4rem,14vw,3.75rem)] font-bold leading-[0.9] tracking-[-0.025em] text-white sm:text-7xl lg:text-[9rem]">
             HAVE SOMETHING
             <br />
             <span className="text-white/35">TO BUILD?</span>
@@ -37,7 +37,7 @@ export function FinalCta() {
 
             <a
               href="/contact"
-              className="group inline-flex w-fit items-center gap-4 border border-white/15 px-6 py-4 text-sm font-medium text-white transition-all duration-300 hover:border-purple-400 hover:bg-purple-500/10"
+              className="group inline-flex w-fit items-center gap-4 rounded-control border border-white/15 px-6 py-4 text-sm font-medium text-white transition-all duration-300 hover:border-purple-400 hover:bg-purple-500/10"
             >
               Start a project
 

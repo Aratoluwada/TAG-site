@@ -54,7 +54,7 @@ export function ProjectEntry({ project, index }: ProjectEntryProps) {
             </div>
 
             <h2
-              className="mt-6 font-display text-[clamp(2.6rem,6.4vw,6.25rem)] font-medium uppercase leading-[0.84] tracking-[-0.075em] text-text-primary"
+              className="mt-6 font-display text-[clamp(2.4rem,11vw,3.4rem)] md:text-[clamp(2.4rem,5.4vw,5rem)] font-bold uppercase leading-[0.84] tracking-[-0.03em] text-text-primary"
               id={`project-${project.slug}`}
             >
               {project.name}
@@ -66,7 +66,7 @@ export function ProjectEntry({ project, index }: ProjectEntryProps) {
 
             <ul aria-label={`${project.name} categories`} className="mt-6 flex flex-wrap gap-2">
               {project.filters.map((filter) => (
-                <li className="border border-border px-3 py-1.5 text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-text-secondary" key={filter}>
+                <li className="rounded-full border border-border px-3 py-1.5 text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-text-secondary" key={filter}>
                   {filter}
                 </li>
               ))}
