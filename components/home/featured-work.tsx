@@ -55,7 +55,7 @@ export function FeaturedWork() {
                   className={cn("project-preview-link group", reversed && "lg:order-2")}
                   href={project.href}
                 >
-                  <ProjectPreview name={project.name} visual={project.visual} />
+                  <ProjectPreview image={project.image} name={project.name} visual={project.visual} />
                   <span className="project-preview-overlay" />
                   <span aria-hidden="true" className="project-preview-arrow">
                     <ArrowUpRight size={21} strokeWidth={1.5} />

@@ -36,7 +36,7 @@ export function ProjectEntry({ project, index }: ProjectEntryProps) {
     >
       <div className={cn("col-span-12 lg:col-span-10", offset && "lg:col-start-3")}>
         <Link aria-label={`View ${project.name} case study`} className="project-preview-link group" href={project.href}>
-          <ProjectPreview name={project.name} visual={project.visual} />
+          <ProjectPreview image={project.image} name={project.name} visual={project.visual} />
           <span className="project-preview-overlay" />
           <span aria-hidden="true" className="project-preview-arrow">
             <ArrowUpRight size={21} strokeWidth={1.5} />
