@@ -59,7 +59,7 @@ export function SiteHeader() {
         aria-label="Mobile navigation"
         className={cn(
           "absolute inset-x-0 top-full z-50 overflow-hidden border-b border-border bg-background transition-[max-height,opacity] duration-300 ease-out md:hidden",
-          isOpen ? "max-h-96 opacity-100" : "pointer-events-none max-h-0 border-transparent opacity-0",
+          isOpen ? "max-h-[28rem] opacity-100" : "pointer-events-none max-h-0 border-transparent opacity-0",
         )}
         id="mobile-navigation"
       >
