@@ -10,7 +10,7 @@ export const services = [
     number: "01",
     title: "Websites",
     description: "Built to be clear, fast, and unmistakably yours.",
-    offerings: ["Marketing websites", "Corporate websites", "School websites", "Church websites", "NGO websites", "Landing pages"],
+    offerings: ["Marketing websites", "Business websites", "School websites", "Church websites", "NGO websites", "Landing pages"],
   },
   {
     number: "02",
