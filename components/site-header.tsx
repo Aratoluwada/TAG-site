@@ -58,14 +58,22 @@ export function SiteHeader() {
       <nav
         aria-label="Mobile navigation"
         className={cn(
-          "absolute inset-x-0 top-full z-50 overflow-hidden border-b border-border bg-background transition-[max-height,opacity] duration-300 ease-out md:hidden",
-          isOpen ? "max-h-[28rem] opacity-100" : "pointer-events-none max-h-0 border-transparent opacity-0",
+          "absolute inset-x-0 top-full z-50 border-b border-border bg-background transition-[max-height,opacity] duration-300 ease-out md:hidden",
+          // Tall enough for the bigger links, and scrolls instead of clipping on short phones.
+          isOpen
+            ? "max-h-[calc(100svh-5rem)] overflow-y-auto opacity-100"
+            : "pointer-events-none max-h-0 overflow-hidden border-transparent opacity-0",
         )}
         id="mobile-navigation"
       >
         <div className="page-shell flex flex-col py-4">
           {navigation.map((item) => (
-            <Link className="border-b border-border py-4 text-lg tracking-[-0.03em] text-text-primary" href={item.href} key={item.href} onClick={() => setIsOpen(false)}>
+            <Link
+              className="border-b border-border py-4 font-display text-[1.875rem] font-bold uppercase leading-none tracking-[-0.02em] text-text-primary transition-colors duration-200 active:text-brand"
+              href={item.href}
+              key={item.href}
+              onClick={() => setIsOpen(false)}
+            >
               {item.label}
             </Link>
           ))}
